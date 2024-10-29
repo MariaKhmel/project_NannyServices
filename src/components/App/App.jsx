@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
-import AppBar from "../components/AppBar/AppBar";
-import HomePage from "../pages/HomePage/HomePage";
+import AppBar from "../AppBar/AppBar";
+import HomePage from "../../pages/HomePage/HomePage";
+import Nannies from "../../pages/Nannies/Nannies";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <AppBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/nannies" element={<Nannies />} />
       </Routes>
     </>
   );
