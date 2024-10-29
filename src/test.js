@@ -1,2 +1,0 @@
-const check = "Dear DataArt Team,I want to express my interest in the Jr.Frontend Developer position.My current role is Operations Lead in Telecom Management company built in ServiceNow.For past 2 years I was engaged in Fullstack program.The focus was on HTML, CSS, JavaScript, React.I worked with Typescript, Node.js.Please note that my location is Ukraine.I used this role to apply as I am looking for React developer position.Best Regards, Maria Khmel".length;
-console.log(check)
