@@ -1,4 +1,4 @@
-const NanniesList = ({ babysitters }) => {
-  return <ul>{babysitters.map((el) => el.name)}</ul>;
+const NanniesList = ({ nannies }) => {
+  return <ul>{nannies.map((el) => el.name)}</ul>;
 };
 export default NanniesList;
