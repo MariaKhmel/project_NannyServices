@@ -1,4 +1,5 @@
-const NannyCard = () => {
+const NannyCard = ({ el }) => {
+  console.log(el);
   return <div></div>;
 };
 
