@@ -8,9 +8,12 @@ const Nannies = () => {
   const [totalPages] = useState(Math.ceil(babysitters.length / 3));
   const [page, setPage] = useState(1);
   const [nannies, setNannies] = useState(babysitters.slice(0, 3));
+
   const onLoadMore = () => {
-    setPage((prevPage) => (prevPage += 1));
-    setNannies(babysitters.slice(0, page + 3));
+    setPage((prevPage) => prevPage + 1);
+    const startIndex = page * 3;
+    const endIndex = startIndex + 3;
+    setNannies(babysitters.slice(startIndex, endIndex));
   };
 
   return (
