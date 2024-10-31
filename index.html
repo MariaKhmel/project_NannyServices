@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nanny services</title>
     <style>
+      body {
+        padding: 100px;
+      }
       .container {
         width: 1400px;
         margin: 0 auto;
@@ -77,6 +80,14 @@
       <p>Background color: <span class="color">-</span></p>
       <button type="button" class="change-color">Change color</button>
     </div>
+
+    <div id="controls">
+      <input type="number" min="1" max="100" step="1" />
+      <button type="button" data-create>Create</button>
+      <button type="button" data-destroy>Destroy</button>
+    </div>
+
+    <div id="boxes"></div>
 
     <script type="module" src="src/test.js"></script>
     <script type="module" src="/src/main.jsx"></script>
