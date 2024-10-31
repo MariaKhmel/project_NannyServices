@@ -64,3 +64,21 @@ const images = [
 //     refs.span.textContent = 'Anonymous'
 //   }
 // })
+
+// const form = document.querySelector('.login-form');
+
+// const onFormSubmitHandler = e => {
+//   e.preventDefault();
+//   const form = e.target;
+//   const email = form.elements.email.value;
+//   const password = form.elements.password.value;
+
+//   if (email === '' || password === '') {
+//     alert('All form fields must be filled in')
+//   }
+
+//   console.log({ email, password });
+//   form.reset();
+// }
+
+// form.addEventListener('submit', onFormSubmitHandler)
