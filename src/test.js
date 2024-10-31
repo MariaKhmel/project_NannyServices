@@ -35,21 +35,32 @@ const images = [
   },
 ];
 
-const galleryRef = document.querySelector('.gallery');
+// const galleryRef = document.querySelector('.gallery');
 
 
-const markUp = images.map(({ url, alt }) => {
-  const li = document.createElement("li");
-  const img = document.createElement("img");
-  img.alt = alt;
-  img.src = url;
-  img.width = 300;
-  img.height = 200;
-  li.append(img);
-  return li;
-});
+// const markUp = images.map(({ url, alt }) => {
+//   const li = document.createElement("li");
+//   const img = document.createElement("img");
+//   img.alt = alt;
+//   img.src = url;
+//   img.width = 300;
+//   img.height = 200;
+//   li.append(img);
+//   return li;
+// });
 
 
-galleryRef.append(...markUp);
+// galleryRef.append(...markUp);
 
+// const refs = {
+//   input: document.querySelector('#name-input'),
+//   span: document.querySelector('#name-output'),
+// }
 
+// refs.input.addEventListener('input', (e) => {
+//   const inputText = e.target.value.trim();
+//   refs.span.textContent = inputText;
+//   if (inputText === '') {
+//     refs.span.textContent = 'Anonymous'
+//   }
+// })
