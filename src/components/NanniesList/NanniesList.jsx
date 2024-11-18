@@ -4,7 +4,9 @@ const NanniesList = ({ nannies }) => {
   return (
     <ul>
       {nannies.map((el) => (
-        <NannyCard key={el.name} el={el} />
+        <li key={el.name}>
+        <NannyCard  el={el} />
+        </li>
       ))}
     </ul>
   );
