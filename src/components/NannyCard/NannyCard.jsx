@@ -2,7 +2,7 @@ import { characteristicList, verbiage } from '../../data/characteristicsList';
 import Characteristic from '../Characteristic/Characteristic';
 import css from './NannyCard.module.css'
 const NannyCard = ({ el }) => {
-
+console.log(el)
   return (<div className={css.nannyCard}>
      <img src={el.avatar_url} className={css.nannyImg}/>
      <div className={css.nannyInfo}>
@@ -18,6 +18,8 @@ const title = verbiage[index]
 }  
 
 </ul>
+<p>{el.about}</p>
+<button type='button' className={css.readMoreBtn}>Read More</button>
     </div>
   </div>);
 };

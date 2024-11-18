@@ -11,3 +11,8 @@
   height: 96px;
 }
 
+.readMoreBtn{
+  text-decoration: underline;
+  border: none;
+  background-color: inherit;
+}
