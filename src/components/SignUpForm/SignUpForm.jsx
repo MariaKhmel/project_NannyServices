@@ -1,18 +1,29 @@
 import { useEffect, useState } from "react";
 import css from "./SignUpForm.module.css";
+import { useNavigate } from "react-router-dom";
 
 const SignUpForm = ({setIsModalShown}) => {
+  const navigate = useNavigate();
   const [formValues, setFormValues] = useState({
     name: "",
     email: "",
     password: "",
   });
 
-  useEffect( ()=>{
-    document.onkeydown=e=>{
-      console.log(e.target)
+  const handleKeyDown = e=>{
+    if(e.key==='Escape'){
+      setIsModalShown(false);
     }
-  })
+  }
+
+  useEffect( ()=>{
+   document.addEventListener('keydown', handleKeyDown);
+   return ()=>{
+    document.removeEventListener('keydown', handleKeyDown)
+   }
+  }
+
+ )
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -22,6 +33,7 @@ const SignUpForm = ({setIsModalShown}) => {
     const password = form.elements.password.value;
     console.log({ name, email, password });
     form.reset();
+   navigate('/nannies');
   };
 
   const handleFormValuesChange = (e) => {
