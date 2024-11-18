@@ -2,7 +2,7 @@ import {  useState } from "react";
 import Filters from "../../components/Filters/Filters";
 import NanniesList from "../../components/NanniesList/NanniesList";
 import babysitters from "../../data/babysitters.json";
-console.log(babysitters);
+
 
 const Nannies = () => {
   const [totalPages] = useState(Math.ceil(babysitters.length / 3));
