@@ -1,12 +1,18 @@
-import { useState } from "react";
-import css from "./Registration.module.css";
+import { useEffect, useState } from "react";
+import css from "./SignUpForm.module.css";
 
-const SignInForm = () => {
+const SignUpForm = ({setIsModalShown}) => {
   const [formValues, setFormValues] = useState({
     name: "",
     email: "",
     password: "",
   });
+
+  useEffect( ()=>{
+    document.onkeydown=e=>{
+      console.log(e.target)
+    }
+  })
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -24,16 +30,32 @@ const SignInForm = () => {
       [e.target.name]: e.target.value,
     });
   };
+
+
+  const onCloseBtn = ()=>{
+    setIsModalShown(false);
+  }
+
+  const onOverlayClick = (e)=>{
+    if(e.target===e.currentTarget){
+      setIsModalShown(false);
+    }
+  
+  }
+
+
   return (
-    <div className={css.modalOverlay}>
+    <div className={css.modalOverlay} onClick={onOverlayClick}>
       <div className={css.modal}>
+      <button className={css.closeBtn} onClick={onCloseBtn}>X</button>
         <h2>Registration</h2>
         <p>
           Thank you for your interest in our platform! In order to register, we
           need some information. Please provide us with the following
           information.
         </p>
-        <form onSubmit={handleFormSubmit}>
+        <form onSubmit={handleFormSubmit} className={css.registrationForm}>
+     
           <input
             type="text"
             name="name"
@@ -61,4 +83,4 @@ const SignInForm = () => {
     </div>
   );
 };
-export default SignInForm;
+export default SignUpForm;
