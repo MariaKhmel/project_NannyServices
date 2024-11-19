@@ -6,9 +6,9 @@ const Characteristic = ({characteristicTitle, value, verbiage})=>{
 if(verbiage==='birthday'){
 value = calculateAge(value)
 }
-return(Array.isArray(value) ?
- <div className={css.characters}><p>{characteristicTitle}</p> : <CharactersList value={value}/> </div>:
-  <p>{characteristicTitle} : {value}</p>)
+return(Array.isArray(value) ? 
+ <div className={css.characters}><p>{characteristicTitle}</p>:&nbsp; <CharactersList value={value}/> </div>:
+  <p>{characteristicTitle}: {' '}{value}</p>)
 }; 
 
 export default Characteristic;
