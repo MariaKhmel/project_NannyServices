@@ -1,7 +1,7 @@
 import {  useState } from "react";
 import Filters from "../../components/Filters/Filters";
 import NanniesList from "../../components/NanniesList/NanniesList";
-import babysitters from "../../data/babysitters.json";
+import babysitters from "../../helpers/babysitters.json";
 
 
 const Nannies = () => {

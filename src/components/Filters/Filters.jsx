@@ -1,5 +1,5 @@
 import { useState } from "react";
-import filters from "../../data/filters";
+import filters from "../../helpers/filters";
 
 const Filters = () => {
   const [filter, setFilter] = useState(filters[0]);

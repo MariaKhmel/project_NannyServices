@@ -1,4 +1,4 @@
-import { characteristicList, verbiage } from '../../data/characteristicsList';
+import { characteristicList, verbiage } from '../../helpers/characteristicsList';
 import Characteristic from '../Characteristic/Characteristic';
 import css from './NannyCard.module.css'
 const NannyCard = ({ el }) => {
@@ -12,7 +12,10 @@ console.log(el)
 {characteristicList.map((characteristicTitle, index)=>{
 const title = verbiage[index]
     return (<li key={characteristicTitle}>
-      <Characteristic characteristicTitle={characteristicTitle} value={el[title]}/>
+      <Characteristic 
+      characteristicTitle={characteristicTitle} 
+      value={el[title]} 
+      verbiage={verbiage[index]}/>
       </li>)
   })
 }  
