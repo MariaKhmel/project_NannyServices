@@ -13,7 +13,7 @@ const Nannies = () => {
     setPage((prevPage) => prevPage + 1);
     const startIndex = page * 3;
     const endIndex = startIndex + 3;
-    setNannies(babysitters.slice(startIndex, endIndex));
+    setNannies(babysitters.slice(0, endIndex));
   };
 
   return (
