@@ -2,11 +2,13 @@ import { characteristicList, verbiage } from '../../helpers/characteristicsList'
 import Characteristic from '../Characteristic/Characteristic';
 import css from './NannyCard.module.css'
 const NannyCard = ({ el }) => {
+
 const onReadMoreBtnClick = e=>{
-  const card = e.target;
+  const card = e.currentTarget;
   console.log(card)
   }
-  return (<div className={css.nannyCard}>
+  
+  return (<div className={css.nannyCard} onClick={onReadMoreBtnClick}>
      <img src={el.avatar_url} className={css.nannyImg}/>
      <div className={css.nannyInfo}>
     <p>Nanny</p>
@@ -25,7 +27,7 @@ const title = verbiage[index]
 
 </ul>
 <p>{el.about}</p>
-<button type='button' className={css.readMoreBtn} onClick={onReadMoreBtnClick}>Read More</button>
+<button type='button' className={css.readMoreBtn} >Read More</button>
     </div>
   </div>);
 };
