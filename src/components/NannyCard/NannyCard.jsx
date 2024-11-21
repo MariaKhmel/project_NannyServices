@@ -5,7 +5,7 @@ const NannyCard = ({ el }) => {
 
 const onReadMoreBtnClick = e=>{
   const card = e.currentTarget;
-  console.log(card)
+  console.log(card.querySelector('h3').textContent);
   }
   
   return (<div className={css.nannyCard} onClick={onReadMoreBtnClick}>
