@@ -1,6 +1,8 @@
-.backDrop{
-  position: relative;
+.overlay{
+  position: fixed;
   top: 0;
+  right:0;
   background-color:lightgray ;
   width: 100%;
+  height: 100%;
 }

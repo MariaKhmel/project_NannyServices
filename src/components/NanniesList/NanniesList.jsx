@@ -13,9 +13,9 @@ setReviews(elToFind.reviews);
 
   }
   return (
-    <ul>
+    <ul >
       {nannies.map((el) => (
-        <li key={el.name}>
+        <li key={el.name} >
         <NannyCard  el={el} onReadMoreBtnClick={onReadMoreBtnClick} reviews={reviews}/>
         </li>
       ))}
