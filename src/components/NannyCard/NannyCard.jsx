@@ -1,9 +1,15 @@
+
 import { useState } from 'react';
 import { characteristicList, verbiage } from '../../helpers/characteristicsList';
+import AdditionalInfo from '../AdditionalInfo/AdditionalInfo';
 import Characteristic from '../Characteristic/Characteristic';
 import css from './NannyCard.module.css'
-const NannyCard = ({ el, onReadMoreBtnClick }) => {
-
+import MakeAppointmentModal from '../MakeAppointmentModal/MakeAppointmentModal';
+const NannyCard = ({ el, onReadMoreBtnClick, reviews }) => {
+const [modal, showModal]=  useState(false)
+const onModalClick = ()=>{
+  showModal(true);
+}
   return (<div className={css.nannyCard} onClick={onReadMoreBtnClick}>
      <img src={el.avatar_url} className={css.nannyImg}/>
      <div className={css.nannyInfo}>
@@ -23,8 +29,13 @@ const title = verbiage[index]
 
 </ul>
 <p>{el.about}</p>
-<button type='button' className={css.readMoreBtn} >Read More</button>
+{reviews.length === 0 && 
+( <button type='button' className={css.readMoreBtn} >Read More</button>)}
+{reviews.length !== 0 && 
+( <AdditionalInfo reviews={reviews} 
+onModalClick={onModalClick}/>)}
     </div>
+    {modal && <MakeAppointmentModal/>}
   </div>);
 };
 
