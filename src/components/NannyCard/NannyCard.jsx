@@ -1,13 +1,9 @@
+import { useState } from 'react';
 import { characteristicList, verbiage } from '../../helpers/characteristicsList';
 import Characteristic from '../Characteristic/Characteristic';
 import css from './NannyCard.module.css'
-const NannyCard = ({ el }) => {
+const NannyCard = ({ el, onReadMoreBtnClick }) => {
 
-const onReadMoreBtnClick = e=>{
-  const card = e.currentTarget;
-  console.log(card.querySelector('h3').textContent);
-  }
-  
   return (<div className={css.nannyCard} onClick={onReadMoreBtnClick}>
      <img src={el.avatar_url} className={css.nannyImg}/>
      <div className={css.nannyInfo}>
