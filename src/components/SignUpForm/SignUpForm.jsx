@@ -10,6 +10,8 @@ const SignUpForm = ({setIsModalShown}) => {
     password: "",
   });
 
+
+  
   const handleKeyDown = e=>{
     if(e.key==='Escape'){
       setIsModalShown(false);
@@ -27,12 +29,12 @@ const SignUpForm = ({setIsModalShown}) => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    const form = e.target;
-    const name = form.elements.name.value;
-    const email = form.elements.email.value;
-    const password = form.elements.password.value;
-    console.log({ name, email, password });
-    form.reset();
+    console.log(formValues)
+    setFormValues({
+      name: "",
+      email: "",
+      password: "",
+    });
    navigate('/nannies');
   };
 
@@ -89,7 +91,7 @@ const SignUpForm = ({setIsModalShown}) => {
             value={formValues.password}
             onChange={handleFormValuesChange}
           />
-          <button type="sumbit">Sign Up</button>
+          <button type="submit">Sign Up</button>
         </form>
       </div>
     </div>

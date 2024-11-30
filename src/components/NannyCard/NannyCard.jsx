@@ -11,7 +11,6 @@ const [reviews, setReviews] = useState([])
 
 const onReadMoreBtnClick = e=>{
   const card = e.currentTarget;
-  console.log(card)
   const selectedEl = card.querySelector('h3').textContent;
   console.log(selectedEl)
 const elToFind = nannies.find(el=>el.name===selectedEl);
@@ -23,6 +22,7 @@ setReviews(elToFind.reviews);
 const onModalClick = ()=>{
   showModal(true);
 }
+
   return (<div className={css.nannyCard} onClick={onReadMoreBtnClick}>
      <img src={el.avatar_url} className={css.nannyImg}/>
      <div className={css.nannyInfo}>
