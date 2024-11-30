@@ -5,8 +5,21 @@ import AdditionalInfo from '../AdditionalInfo/AdditionalInfo';
 import Characteristic from '../Characteristic/Characteristic';
 import css from './NannyCard.module.css'
 import MakeAppointmentModal from '../MakeAppointmentModal/MakeAppointmentModal';
-const NannyCard = ({ el, onReadMoreBtnClick, reviews }) => {
-const [modal, showModal]=  useState(false)
+const NannyCard = ({ el, nannies}) => {
+const [modal, showModal]=  useState(false);
+const [reviews, setReviews] = useState([])
+
+const onReadMoreBtnClick = e=>{
+  const card = e.currentTarget;
+  console.log(card)
+  const selectedEl = card.querySelector('h3').textContent;
+  console.log(selectedEl)
+const elToFind = nannies.find(el=>el.name===selectedEl);
+if(elToFind){
+setReviews(elToFind.reviews);
+}
+
+}
 const onModalClick = ()=>{
   showModal(true);
 }
