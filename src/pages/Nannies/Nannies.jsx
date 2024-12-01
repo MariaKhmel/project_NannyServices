@@ -9,10 +9,19 @@ const Nannies = () => {
   const [totalPages] = useState(Math.ceil(babysitters.length / 3));
   const [page, setPage] = useState(1);
   const [nannies, setNannies] = useState(babysitters.slice(0, 3));
-  const [currentFilter, setCurrentFilter] = useState(filters[0]);
-// useEffect(()=>{
-//   if(filter )
-// },[])
+  const [currentFilter, setCurrentFilter] = useState(filters[filters.length-1]);
+ useEffect(()=>{
+ switch(currentFilter){
+  case('Show all'):
+  setNannies(babysitters.slice(0, 3));
+  break;
+  case('Greater than $10'):
+ setNannies(filterNanniesGreaterTan10(babysitters).slice(0, 3));
+ }
+
+ },[currentFilter])
+
+
   const onLoadMore = () => {
     setPage((prevPage) => prevPage + 1);
     const startIndex = page * 3;
@@ -22,12 +31,9 @@ const Nannies = () => {
 
 const handleFilterChange = (selectedFilter)=>{
 setCurrentFilter(selectedFilter);
-switch(selectedFilter){
-  case('Greater than $10'):
- setNannies(filterNanniesGreaterTan10(babysitters));
 
 }
-}
+
   return (
     <>
       <Filters currentFilter={currentFilter}
