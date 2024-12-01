@@ -1,16 +1,16 @@
-import { useState } from "react";
-import filters from "../../helpers/filters";
 
-const Filters = () => {
-  const [filter, setFilter] = useState(filters[0]);
-  const handleValueChange = (e) => {
-    setFilter(e.target.value);
+
+const Filters = ({currentFilter , filters,handleFilterChange }) => {
+
+
+  const handleChange = (e) => {
+    handleFilterChange(e.target.value);
   };
 
   return (
     <div>
       <label htmlFor="filters">Filters</label>
-      <select id="filters" value={filter} onChange={handleValueChange}>
+      <select id="filters" value={currentFilter} onChange={handleChange }>
         {filters.map((el) => (
           <option key={el} value={el}>
             {el}

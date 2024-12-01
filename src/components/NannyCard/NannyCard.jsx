@@ -28,6 +28,7 @@ const onModalClick = ()=>{
      <div className={css.nannyInfo}>
     <p>Nanny</p>
     <h3>{el.name}</h3>
+    <p>{`Price : ${el['price_per_hour']}`}</p>
     <ul> 
 {characteristicList.map((characteristicTitle, index)=>{
 const title = verbiage[index]
