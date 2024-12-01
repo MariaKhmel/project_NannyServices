@@ -3,7 +3,7 @@ import Filters from "../../components/Filters/Filters";
 import NanniesList from "../../components/NanniesList/NanniesList";
 import babysitters from "../../helpers/babysitters.json";
 import filters from "../../helpers/filters";
-import { filterNanniesGreaterTan10 } from "../../helpers/filterNannies";
+import { filterAtoZ, filterGreaterThan10, filterLessThan10, filterNotPopular, filterPopular, filterZtoA } from "../../helpers/filterNannies";
 
 const Nannies = () => {
   const [totalPages] = useState(Math.ceil(babysitters.length / 3));
@@ -16,10 +16,25 @@ const Nannies = () => {
   setNannies(babysitters.slice(0, 3));
   break;
   case('Greater than $10'):
- setNannies(filterNanniesGreaterTan10(babysitters).slice(0, 3));
+ setNannies(filterGreaterThan10(babysitters).slice(0, 3));
+ break;
+ case('A to Z'):
+  setNannies(filterAtoZ(babysitters).slice(0, 3));
+ break;
+ case('Z to A'):
+ setNannies(filterZtoA(babysitters).slice(0, 3));
+break;
+case('Less than $10'):
+setNannies(filterLessThan10(babysitters).slice(0, 3));
+break;
+case('Popular'):
+setNannies(filterPopular(babysitters).slice(0, 3));
+break;
+case('Not popular'):
+setNannies(filterNotPopular(babysitters).slice(0, 3));
+break;
  }
-
- },[currentFilter])
+ },[currentFilter]);
 
 
   const onLoadMore = () => {
