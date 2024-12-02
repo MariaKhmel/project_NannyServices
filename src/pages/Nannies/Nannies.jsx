@@ -11,28 +11,29 @@ const Nannies = () => {
   const [nannies, setNannies] = useState(babysitters.slice(0, 3));
   const [currentFilter, setCurrentFilter] = useState(filters[filters.length-1]);
  useEffect(()=>{
+  let filteredlist;
  switch(currentFilter){
-  case('Show all'):
-  setNannies(babysitters.slice(0, 3));
-  break;
   case('Greater than $10'):
- setNannies(filterGreaterThan10(babysitters).slice(0, 3));
+  filteredlist = filterGreaterThan10(babysitters);
  break;
  case('A to Z'):
-  setNannies(filterAtoZ(babysitters).slice(0, 3));
+ filteredlist = filterAtoZ(babysitters);
  break;
  case('Z to A'):
- setNannies(filterZtoA(babysitters).slice(0, 3));
+ filteredlist = filterZtoA(babysitters);
 break;
 case('Less than $10'):
-setNannies(filterLessThan10(babysitters).slice(0, 3));
+filteredlist = filterLessThan10(babysitters);
 break;
 case('Popular'):
-setNannies(filterPopular(babysitters).slice(0, 3));
+filteredlist = filterPopular(babysitters);
 break;
 case('Not popular'):
-setNannies(filterNotPopular(babysitters).slice(0, 3));
+filteredlist = filterNotPopular(babysitters);
 break;
+case('Show all'):
+default:
+filteredlist = babysitters;
  }
  },[currentFilter]);
 
