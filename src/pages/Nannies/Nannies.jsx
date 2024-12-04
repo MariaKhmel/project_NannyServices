@@ -3,7 +3,7 @@ import Filters from "../../components/Filters/Filters";
 import NanniesList from "../../components/NanniesList/NanniesList";
 import babysitters from "../../helpers/babysitters.json";
 import filters from "../../helpers/filters";
-import {filterNannies} from "../../helpers/filterNannies/filterNannies.js";
+import {filterNannies} from "../../helpers/filterNannies"
 
 const Nannies = () => {
   const [totalPages, setTotalPages] = useState(1);
@@ -25,7 +25,9 @@ const filteredList = filterNannies(babysitters, currentFilter)
     setPage((prevPage) => prevPage + 1);
     const startIndex = (page - 1) * 3;
     const endIndex = startIndex + 3;
-    setNannies(filteredBabySitters.slice(0, endIndex));
+    setNannies((prevNannies=>[...prevNannies,
+      ...filteredBabySitters.slice(startIndex, endIndex)]
+   ));
   };
 
 const handleFilterChange = (selectedFilter)=>{
