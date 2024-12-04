@@ -3,7 +3,7 @@ import Filters from "../../components/Filters/Filters";
 import NanniesList from "../../components/NanniesList/NanniesList";
 import babysitters from "../../helpers/babysitters.json";
 import filters from "../../helpers/filters";
-import { filterAtoZ, filterGreaterThan10, filterLessThan10, filterNannies, filterNotPopular, filterPopular, filterZtoA } from "../../helpers/filterNannies";
+
 
 const Nannies = () => {
   const [totalPages, setTotalPages] = useState(1);
@@ -13,32 +13,7 @@ const Nannies = () => {
 const [filteredBabySitters, setFilteredBabySitters] = useState(babysitters)
 
  useEffect(()=>{
-//   let filteredList;
-//  switch(currentFilter){
-//  case('Greater than $10'):
-//   filteredList = filterGreaterThan10(babysitters);
-//  break;
-//  case('A to Z'):
-//  filteredList = filterAtoZ(babysitters);
-//  break;
-//  case('Z to A'):
-//  filteredList = filterZtoA(babysitters);
-// break;
-// case('Less than $10'):
-// filteredList = filterLessThan10(babysitters);
-// break;
-// case('Popular'):
-// filteredList = filterPopular(babysitters);
-// break;
-// case('Not popular'):
-// filteredList= filterNotPopular(babysitters);
-// break;
-// case('Show all'):
-// default:
-//   filteredList = babysitters;
-//  }
 const filteredList = filterNannies(babysitters, currentFilter)
-
  setFilteredBabySitters(filteredList);
  setPage(1);
  setTotalPages(Math.ceil(filteredList.length/3));
