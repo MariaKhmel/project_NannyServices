@@ -3,7 +3,7 @@ import Filters from "../../components/Filters/Filters";
 import NanniesList from "../../components/NanniesList/NanniesList";
 import babysitters from "../../helpers/babysitters.json";
 import filters from "../../helpers/filters";
-
+import {filterNannies} from "../../helpers/filterNannies/filterNannies.js";
 
 const Nannies = () => {
   const [totalPages, setTotalPages] = useState(1);

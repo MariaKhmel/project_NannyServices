@@ -15,7 +15,7 @@ babysitters =>babysitters.filter(el=>el.rating>4);
 const filterNotPopular = 
 babysitters =>babysitters.filter(el=>el.rating<3.5);
 
-const filterNannies= (babysitters, currentFilter)=>{
+const filterNannies = (babysitters, currentFilter)=>{
   let filteredList;
   switch(currentFilter){
   case('Greater than $10'):
@@ -43,5 +43,4 @@ const filterNannies= (babysitters, currentFilter)=>{
 
   return filteredList;
 }
-export {filterGreaterThan10, filterAtoZ, 
-  filterPopular, filterNotPopular, filterZtoA, filterLessThan10, filterNannies};
+export {filterNannies};
