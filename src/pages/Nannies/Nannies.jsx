@@ -6,10 +6,12 @@ import filters from "../../helpers/filters";
 import { filterAtoZ, filterGreaterThan10, filterLessThan10, filterNotPopular, filterPopular, filterZtoA } from "../../helpers/filterNannies";
 
 const Nannies = () => {
-  const [totalPages] = useState(Math.ceil(babysitters.length / 3));
+  const [totalPages, setTotalPages] = useState(1);
   const [page, setPage] = useState(1);
-  const [nannies, setNannies] = useState(babysitters.slice(0, 3));
+  const [nannies, setNannies] = useState([]);
   const [currentFilter, setCurrentFilter] = useState(filters[filters.length-1]);
+const [filteredBabySitters, setFilteredBabySitters] = useState(babysitters)
+
  useEffect(()=>{
   let filteredList;
  switch(currentFilter){
@@ -35,6 +37,11 @@ case('Show all'):
 default:
   filteredList = babysitters;
  }
+
+ setFilteredBabySitters(filteredList);
+ setPage(1);
+ setTotalPages(Math.ceil(filteredList.length/3));
+ setNannies(filteredList.slice(0,3))
  },[currentFilter]);
 
 
