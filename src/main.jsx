@@ -6,25 +6,14 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./components/App/App";
 
 function toCamelCase(str) {
-  if (str.includes("_") || str.includes("-")) {
-    const upperCaseArr = str.split("_").map((word, i, arr) => {
-      if (arr[0][0] === arr[0][0].toUpperCase()) {
-        const firstLetter = word[0].toUpperCase();
-        const restOfTheWord = arr[i].slice(1);
-        return [...firstLetter, ...restOfTheWord].join("");
-      } else {
-        const firstWord = arr[0];
-        const restWords = [];
-        if (arr[i] !== firstWord) {
-          const firstLetter = word[0].toUpperCase();
-          const restOfTheWord = arr[i].slice(1);
-          restWords.push([...firstLetter, ...restOfTheWord].join(""));
-        }
-        return [...firstWord, ...restWords].join("");
-      }
-    });
-    return upperCaseArr.join("");
-  }
+  const delimeters = ["-", "_"];
+  const delimeter = delimeters.find((d) => str.includes(d));
+  return str
+    .split(delimeter)
+    .map((word, index) =>
+      index === 0 ? word : word[0].toUpperCase() + word.slice(1)
+    )
+    .join("");
 }
 
 console.log(toCamelCase("the_stealth_warrior"));
