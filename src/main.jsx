@@ -6,24 +6,7 @@ import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import App from "./components/App/App";
 
-function findOdd(A) {
-  const obj ={};
-  for(const el of A){
-    if(obj[el]){
-      obj[el] = obj[el]+=1;
-      continue;
-    }
-     obj[el]=1; 
-  }
 
-for(const key in obj){
-  if(obj[key]%2){
-    return key;
-  }
-}
-}
-
-console.log(findOdd([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]));
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
