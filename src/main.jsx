@@ -15,9 +15,12 @@ function findOdd(A) {
     }
      obj[el]=1; 
   }
-const values = Object.values(obj);
-const oddNumber = values.filter(num=>num%2);
-return oddNumber;
+
+for(const key in obj){
+  if(obj[key]%2){
+    return key;
+  }
+}
 }
 
 console.log(findOdd([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]));
