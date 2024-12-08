@@ -10,6 +10,7 @@ const [modal, showModal]=  useState(false);
 const [reviews, setReviews] = useState([])
 
 const onReadMoreBtnClick = e=>{
+console.log(e)
   const card = e.currentTarget;
   const selectedEl = card.querySelector('h3').textContent;
   console.log(selectedEl)

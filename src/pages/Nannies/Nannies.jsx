@@ -22,12 +22,15 @@ const filteredList = filterNannies(babysitters, currentFilter)
 
 
   const onLoadMore = () => {
-    setPage((prevPage) => prevPage + 1);
-    const startIndex = (page - 1) * 3;
-    const endIndex = startIndex + 3;
-    setNannies((prevNannies=>[...prevNannies,
-      ...filteredBabySitters.slice(startIndex, endIndex)]
-   ));
+    setPage((prevPage) => {
+      const newPage = prevPage + 1;
+      const startIndex = prevPage  * 3;
+      const endIndex = startIndex + 3;
+      console.log(page)
+      setNannies((prevNannies=>[...prevNannies,
+        ...filteredBabySitters.slice(startIndex, endIndex)]
+     ));
+    return newPage;});
   };
 
 const handleFilterChange = (selectedFilter)=>{
