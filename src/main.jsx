@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "modern-normalize";
-
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import App from "./components/App/App";
@@ -13,6 +12,15 @@ function toCamelCase(str) {
         const firstLetter = word[0].toUpperCase();
         const restOfTheWord = arr[i].slice(1);
         return [...firstLetter, ...restOfTheWord].join("");
+      } else {
+        const firstWord = arr[0];
+        const restWords = [];
+        if (arr[i] !== firstWord) {
+          const firstLetter = word[0].toUpperCase();
+          const restOfTheWord = arr[i].slice(1);
+          restWords.push([...firstLetter, ...restOfTheWord].join(""));
+        }
+        return [...firstWord, ...restWords].join("");
       }
     });
     return upperCaseArr.join("");
