@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import ReactDOM from "react-dom/client";
 import "modern-normalize";
 import "./index.css";
@@ -7,9 +7,10 @@ import App from "./components/App/App";
 
 var uniqueInOrder = function (iterable) {
   if (typeof iterable === "string") {
-    console.log(true);
+    const arr = iterable.split("");
+    return arr.filter((char, i, arr) => char !== arr[i + 1]);
   } else if (typeof iterable === "object") {
-    console.log(this);
+    return iterable.filter((char, i, arr) => char !== arr[i + 1]);
   }
 };
 
