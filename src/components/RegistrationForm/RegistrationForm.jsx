@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import css from "./SignUpForm.module.css";
+import css from "./RegistrationForm.module.css";
 import { useNavigate } from "react-router-dom";
 
-const SignUpForm = ({setIsModalShown}) => {
+const RegistrationForm = ({ setIsModalShown }) => {
   const navigate = useNavigate();
   const [formValues, setFormValues] = useState({
     name: "",
@@ -10,32 +10,28 @@ const SignUpForm = ({setIsModalShown}) => {
     password: "",
   });
 
-
-  
-  const handleKeyDown = e=>{
-    if(e.key==='Escape'){
+  const handleKeyDown = (e) => {
+    if (e.key === "Escape") {
       setIsModalShown(false);
     }
-  }
+  };
 
-  useEffect( ()=>{
-   document.addEventListener('keydown', handleKeyDown);
-   return ()=>{
-    document.removeEventListener('keydown', handleKeyDown)
-   }
-  }
-
- )
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  });
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log(formValues)
+    console.log(formValues);
     setFormValues({
       name: "",
       email: "",
       password: "",
     });
-   navigate('/nannies');
+    navigate("/nannies");
   };
 
   const handleFormValuesChange = (e) => {
@@ -45,23 +41,22 @@ const SignUpForm = ({setIsModalShown}) => {
     });
   };
 
-
-  const onCloseBtn = ()=>{
+  const onCloseBtn = () => {
     setIsModalShown(false);
-  }
+  };
 
-  const onOverlayClick = (e)=>{
-    if(e.target===e.currentTarget){
+  const onOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
       setIsModalShown(false);
     }
-  
-  }
-
+  };
 
   return (
     <div className={css.modalOverlay} onClick={onOverlayClick}>
       <div className={css.modal}>
-      <button className={css.closeBtn} onClick={onCloseBtn}>X</button>
+        <button className={css.closeBtn} onClick={onCloseBtn}>
+          X
+        </button>
         <h2>Registration</h2>
         <p>
           Thank you for your interest in our platform! In order to register, we
@@ -69,7 +64,6 @@ const SignUpForm = ({setIsModalShown}) => {
           information.
         </p>
         <form onSubmit={handleFormSubmit} className={css.registrationForm}>
-     
           <input
             type="text"
             name="name"
@@ -97,4 +91,4 @@ const SignUpForm = ({setIsModalShown}) => {
     </div>
   );
 };
-export default SignUpForm;
+export default RegistrationForm;

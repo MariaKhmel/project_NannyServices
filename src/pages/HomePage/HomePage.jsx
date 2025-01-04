@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { IoMdArrowRoundForward } from "react-icons/io";
-import SignUpForm from "../../components/SignUpForm/SignUpForm";
+import SignUpForm from "../../components/RegistrationForm/RegistrationForm";
 
 const HomePage = () => {
   const [isModalShown, setIsModalShown] = useState(false);
@@ -12,7 +12,7 @@ const HomePage = () => {
       <button type="button" onClick={() => setIsModalShown(true)}>
         Get started <IoMdArrowRoundForward />
       </button>
-      {isModalShown && <SignUpForm setIsModalShown={setIsModalShown}/>}
+      {isModalShown && <SignUpForm setIsModalShown={setIsModalShown} />}
     </>
   );
 };
