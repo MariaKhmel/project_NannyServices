@@ -5,7 +5,6 @@ import css from "./AppBar.module.css";
 import { useState } from "react";
 
 const AppBar = () => {
-  const [selected, isSelected] = useState("");
   return (
     <header className={css.header}>
       <NavLink to="/" className={css.logo}>
