@@ -18,6 +18,7 @@ function App() {
       setIsLogInModalShown(true);
     }
   }, [location.pathname]);
+
   return (
     <>
       <AppBar />
