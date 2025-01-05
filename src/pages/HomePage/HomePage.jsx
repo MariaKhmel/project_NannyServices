@@ -1,10 +1,7 @@
-import { useState } from "react";
 import { IoMdArrowRoundForward } from "react-icons/io";
-import SignUpForm from "../../components/RegistrationForm/RegistrationForm";
+import RegistrationForm from "../../components/RegistrationForm/RegistrationForm";
 
-const HomePage = () => {
-  const [isModalShown, setIsModalShown] = useState(false);
-
+const HomePage = ({ isModalShown, setIsModalShown }) => {
   return (
     <>
       <h1>Make Life Easier for the Family:</h1>
@@ -12,7 +9,7 @@ const HomePage = () => {
       <button type="button" onClick={() => setIsModalShown(true)}>
         Get started <IoMdArrowRoundForward />
       </button>
-      {isModalShown && <SignUpForm setIsModalShown={setIsModalShown} />}
+      {isModalShown && <RegistrationForm setIsModalShown={setIsModalShown} />}
     </>
   );
 };

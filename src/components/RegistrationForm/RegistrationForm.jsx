@@ -13,6 +13,7 @@ const RegistrationForm = ({ setIsModalShown }) => {
   const handleKeyDown = (e) => {
     if (e.key === "Escape") {
       setIsModalShown(false);
+      navigate("/");
     }
   };
 
@@ -43,12 +44,14 @@ const RegistrationForm = ({ setIsModalShown }) => {
 
   const onCloseBtn = () => {
     setIsModalShown(false);
+    navigate("/");
   };
 
   const onOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
       setIsModalShown(false);
     }
+    navigate("/");
   };
 
   return (
@@ -72,7 +75,7 @@ const RegistrationForm = ({ setIsModalShown }) => {
             onChange={handleFormValuesChange}
           />
           <input
-            type="email"
+            type="text"
             name="email"
             placeholder="Email"
             value={formValues.email}
