@@ -1,3 +1,5 @@
+import Bugsnag from "@bugsnag/js";
+
 const Favotites = () => {
   return (
     <>

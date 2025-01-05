@@ -1,14 +1,18 @@
-// import React from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import "modern-normalize";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import App from "./components/App/App";
+import Bugsnag from "./bugsnag"; // Import your Bugsnag initialization
+const ErrorBoundary = Bugsnag.getPlugin("react")?.createErrorBoundary(React);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   // <React.StrictMode>
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <ErrorBoundary>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </ErrorBoundary>
   // </React.StrictMode>
 );
