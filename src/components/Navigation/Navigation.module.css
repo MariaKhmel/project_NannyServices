@@ -1,6 +1,8 @@
-.active {
-  color: beige;
-  text-decoration: underline;
+.navLink::after {
+  content: "";
+  width: 100px;
+  height: 2px;
+  background-color: #fff;
 }
 
 .navLink {
