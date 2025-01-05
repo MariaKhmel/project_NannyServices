@@ -1,10 +1,16 @@
-.navLink::after {
-  content: "";
-  width: 100px;
-  height: 2px;
-  background-color: #fff;
-}
-
 .navLink {
   color: #fbfbfb;
+  position: relative;
+}
+.active::after {
+  content: " ";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  text-align: center;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background-color: #fff;
 }
