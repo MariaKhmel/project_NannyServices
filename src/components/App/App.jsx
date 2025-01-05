@@ -3,17 +3,19 @@ import AppBar from "../AppBar/AppBar";
 import HomePage from "../../pages/HomePage/HomePage";
 import Nannies from "../../pages/Nannies/Nannies";
 import { useEffect, useState } from "react";
-import LogInForm from "../Forms/LogInForm";
 
 function App() {
   const [isRegistrationModalShown, setIsRegistrationModalShown] =
     useState(false);
+  const [isLogInModalShown, setIsLogInModalShown] = useState(false);
 
   const location = useLocation();
   useEffect(() => {
-    console.log(location.pathname);
     if (location.pathname === "/register") {
       setIsRegistrationModalShown(true);
+    }
+    if (location.pathname === "/login") {
+      setIsLogInModalShown(true);
     }
   }, [location.pathname]);
   return (
@@ -30,7 +32,15 @@ function App() {
           }
         />
         <Route path="/nannies" element={<Nannies />} />
-        <Route path="/login" element={<LogInForm />} />
+        <Route
+          path="/login"
+          element={
+            <HomePage
+              isLogInModalShown={isLogInModalShown}
+              setIsLogInModalShown={setIsLogInModalShown}
+            />
+          }
+        />
         <Route
           path="/register"
           element={

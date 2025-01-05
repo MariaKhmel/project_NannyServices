@@ -1,8 +1,9 @@
-import { useState } from "react";
-import css from "./Forms.module.css";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import css from "./Forms.module.css";
+import "../../index.css";
 
-const LogInForm = () => {
+const LogInForm = ({ setIsLogInModalShown }) => {
   const navigate = useNavigate();
   const [formValues, setFormValues] = useState({
     email: "",
@@ -11,7 +12,7 @@ const LogInForm = () => {
 
   const handleKeyDown = (e) => {
     if (e.key === "Escape") {
-      setIsModalShown(false);
+      setIsLogInModalShown(false);
       navigate("/");
     }
   };
@@ -27,7 +28,6 @@ const LogInForm = () => {
     e.preventDefault();
     console.log(formValues);
     setFormValues({
-      name: "",
       email: "",
       password: "",
     });
@@ -42,15 +42,15 @@ const LogInForm = () => {
   };
 
   const onCloseBtn = () => {
-    setIsModalShown(false);
+    setIsLogInModalShown(false);
     navigate("/");
   };
 
   const onOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
-      setIsModalShown(false);
+      setIsLogInModalShown(false);
+      navigate("/");
     }
-    navigate("/");
   };
 
   return (
@@ -79,7 +79,9 @@ const LogInForm = () => {
             value={formValues.password}
             onChange={handleFormValuesChange}
           />
-          <button type="submit">Log In</button>
+          <button type="submit" className="formBtn">
+            Log In
+          </button>
         </form>
       </div>
     </div>

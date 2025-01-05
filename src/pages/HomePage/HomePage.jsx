@@ -1,9 +1,12 @@
 import { IoMdArrowRoundForward } from "react-icons/io";
 import RegistrationForm from "../../components/Forms/RegistrationForm";
+import LogInForm from "../../components/Forms/LogInForm";
 
 const HomePage = ({
   isRegistrationModalShown,
   setIsRegistrationModalShown,
+  setIsLogInModalShown,
+  isLogInModalShown,
 }) => {
   return (
     <>
@@ -16,6 +19,9 @@ const HomePage = ({
         <RegistrationForm
           setIsRegistrationModalShown={setIsRegistrationModalShown}
         />
+      )}
+      {isLogInModalShown && (
+        <LogInForm setIsLogInModalShown={setIsLogInModalShown} />
       )}
     </>
   );

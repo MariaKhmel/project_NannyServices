@@ -27,6 +27,15 @@ img {
 a {
   text-decoration: none;
 }
-li{
+li {
   list-style: none;
+}
+
+.formBtn {
+  display: inline-block;
+  border-radius: 30px;
+  width: 472px;
+  height: 52px;
+  background-color: #f03f3b;
+  border: none;
 }

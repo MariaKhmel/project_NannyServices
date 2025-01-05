@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import css from "./Forms.module.css";
+import "../../index.css";
 import { useNavigate } from "react-router-dom";
 
 const RegistrationForm = ({ setIsRegistrationModalShown }) => {
@@ -50,8 +51,8 @@ const RegistrationForm = ({ setIsRegistrationModalShown }) => {
   const onOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
       setIsRegistrationModalShown(false);
+      navigate("/");
     }
-    navigate("/");
   };
 
   return (
@@ -88,7 +89,9 @@ const RegistrationForm = ({ setIsRegistrationModalShown }) => {
             value={formValues.password}
             onChange={handleFormValuesChange}
           />
-          <button type="submit">Sign Up</button>
+          <button type="submit" className="formBtn">
+            Sign Up
+          </button>
         </form>
       </div>
     </div>
