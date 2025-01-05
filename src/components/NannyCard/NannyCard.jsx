@@ -12,10 +12,8 @@ const NannyCard = ({ el, nannies }) => {
   const [reviews, setReviews] = useState([]);
 
   const onReadMoreBtnClick = (e) => {
-    console.log(e);
     const card = e.currentTarget;
     const selectedEl = card.querySelector("h3").textContent;
-    console.log(selectedEl);
     const elToFind = nannies.find((el) => el.name === selectedEl);
     if (elToFind) {
       setReviews(elToFind.reviews);

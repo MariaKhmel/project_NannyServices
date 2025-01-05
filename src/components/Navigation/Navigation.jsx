@@ -18,6 +18,15 @@ const Navigation = () => {
       >
         Nannies
       </NavLink>
+
+      <NavLink
+        to="/favorites"
+        className={({ isActive }) =>
+          buildClasses(css.navLink, isActive && css.active)
+        }
+      >
+        Favorites
+      </NavLink>
     </div>
   );
 };

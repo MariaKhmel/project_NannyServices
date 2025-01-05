@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
+import css from "./AppBar.module.css";
+
 import AuthNav from "../AuthNav/AuthNav";
 import Navigation from "../Navigation/Navigation";
-import css from "./AppBar.module.css";
-import { useState } from "react";
 
 const AppBar = () => {
   return (

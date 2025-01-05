@@ -3,6 +3,7 @@ import AppBar from "../AppBar/AppBar";
 import HomePage from "../../pages/HomePage/HomePage";
 import Nannies from "../../pages/Nannies/Nannies";
 import { useEffect, useState } from "react";
+import Favotites from "../../pages/Favotites/Favotites";
 
 function App() {
   const [isRegistrationModalShown, setIsRegistrationModalShown] =
@@ -33,6 +34,7 @@ function App() {
           }
         />
         <Route path="/nannies" element={<Nannies />} />
+        <Route path="/favorites" element={<Favotites />} />
         <Route
           path="/login"
           element={
