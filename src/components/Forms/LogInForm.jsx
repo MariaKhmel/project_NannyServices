@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
-import css from "./RegistrationForm.module.css";
+import { useState } from "react";
+import css from "./Forms.module.css";
 import { useNavigate } from "react-router-dom";
 
-const RegistrationForm = ({ setIsModalShown }) => {
+const LogInForm = () => {
   const navigate = useNavigate();
   const [formValues, setFormValues] = useState({
-    name: "",
     email: "",
     password: "",
   });
@@ -60,20 +59,12 @@ const RegistrationForm = ({ setIsModalShown }) => {
         <button className={css.closeBtn} onClick={onCloseBtn}>
           X
         </button>
-        <h2>Registration</h2>
+        <h2>Log In</h2>
         <p>
-          Thank you for your interest in our platform! In order to register, we
-          need some information. Please provide us with the following
-          information.
+          Welcome back! Please enter your credentials to access your account and
+          continue your babysitter search.
         </p>
         <form onSubmit={handleFormSubmit} className={css.registrationForm}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            value={formValues.name}
-            onChange={handleFormValuesChange}
-          />
           <input
             type="text"
             name="email"
@@ -88,10 +79,11 @@ const RegistrationForm = ({ setIsModalShown }) => {
             value={formValues.password}
             onChange={handleFormValuesChange}
           />
-          <button type="submit">Sign Up</button>
+          <button type="submit">Log In</button>
         </form>
       </div>
     </div>
   );
 };
-export default RegistrationForm;
+
+export default LogInForm;

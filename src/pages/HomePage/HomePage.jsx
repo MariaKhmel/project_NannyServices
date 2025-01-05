@@ -1,15 +1,22 @@
 import { IoMdArrowRoundForward } from "react-icons/io";
-import RegistrationForm from "../../components/RegistrationForm/RegistrationForm";
+import RegistrationForm from "../../components/Forms/RegistrationForm";
 
-const HomePage = ({ isModalShown, setIsModalShown }) => {
+const HomePage = ({
+  isRegistrationModalShown,
+  setIsRegistrationModalShown,
+}) => {
   return (
     <>
       <h1>Make Life Easier for the Family:</h1>
       <p>Find Babysitters Online for All Occasions</p>
-      <button type="button" onClick={() => setIsModalShown(true)}>
+      <button type="button" onClick={() => setIsRegistrationModalShown(true)}>
         Get started <IoMdArrowRoundForward />
       </button>
-      {isModalShown && <RegistrationForm setIsModalShown={setIsModalShown} />}
+      {isRegistrationModalShown && (
+        <RegistrationForm
+          setIsRegistrationModalShown={setIsRegistrationModalShown}
+        />
+      )}
     </>
   );
 };
