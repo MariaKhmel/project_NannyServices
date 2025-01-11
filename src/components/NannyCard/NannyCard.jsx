@@ -8,10 +8,12 @@ import Characteristic from "../Characteristic/Characteristic";
 import css from "./NannyCard.module.css";
 import MakeAppointmentModal from "../MakeAppointmentModal/MakeAppointmentModal";
 import FavoriteHeart from "../FavoriteHeart/FavoriteHeart";
+import { use } from "react";
 
 const NannyCard = ({ el, nannies }) => {
   const [modal, showModal] = useState(false);
   const [reviews, setReviews] = useState([]);
+  const [isFavorite, setIsFavorite] = useState(false);
 
   const onReadMoreBtnClick = (e) => {
     const card = e.currentTarget;
@@ -27,7 +29,7 @@ const NannyCard = ({ el, nannies }) => {
 
   return (
     <div className={css.nannyCard} onClick={onReadMoreBtnClick}>
-      <FavoriteHeart />
+      <FavoriteHeart isFavorite={isFavorite} />
       <img src={el.avatar_url} className={css.nannyImg} />
       <div className={css.nannyInfo}>
         <p>Nanny</p>
