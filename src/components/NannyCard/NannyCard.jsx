@@ -29,7 +29,7 @@ const NannyCard = ({ el, nannies }) => {
 
   return (
     <div className={css.nannyCard} onClick={onReadMoreBtnClick}>
-      <FavoriteHeart isFavorite={isFavorite} />
+      <FavoriteHeart isFavorite={isFavorite} setIsFavorite={setIsFavorite} />
       <img src={el.avatar_url} className={css.nannyImg} />
       <div className={css.nannyInfo}>
         <p>Nanny</p>
