@@ -1,0 +1,7 @@
+.favoriteHeart {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  background-color: #fff;
+  color: firebrick;
+}

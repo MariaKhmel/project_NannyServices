@@ -3,7 +3,7 @@ import css from "./FavoriteHeart.module.css";
 const FavoriteHeart = () => {
   return (
     <>
-      <FaHeart className={css.nannyCard} />
+      <FaHeart className={css.favoriteHeart} />
     </>
   );
 };
