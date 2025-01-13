@@ -8,7 +8,6 @@ import Characteristic from "../Characteristic/Characteristic";
 import css from "./NannyCard.module.css";
 import MakeAppointmentModal from "../MakeAppointmentModal/MakeAppointmentModal";
 import FavoriteHeart from "../FavoriteHeart/FavoriteHeart";
-import { use } from "react";
 
 const NannyCard = ({ el, nannies }) => {
   const [modal, showModal] = useState(false);
