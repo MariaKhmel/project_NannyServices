@@ -48,7 +48,7 @@ const Nannies = ({ setFavorites }) => {
         filters={filters}
         handleFilterChange={handleFilterChange}
       />
-      <NanniesList nannies={nannies} />
+      <NanniesList nannies={nannies} setFavorites={setFavorites} />
       <button type="button" onClick={onLoadMore} disabled={totalPages === page}>
         Load More
       </button>

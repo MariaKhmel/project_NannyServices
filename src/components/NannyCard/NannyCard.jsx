@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   characteristicList,
   verbiage,
@@ -9,10 +9,16 @@ import css from "./NannyCard.module.css";
 import MakeAppointmentModal from "../MakeAppointmentModal/MakeAppointmentModal";
 import FavoriteHeart from "../FavoriteHeart/FavoriteHeart";
 
-const NannyCard = ({ el, nannies }) => {
+const NannyCard = ({ el, nannies, setFavorites }) => {
   const [modal, showModal] = useState(false);
   const [reviews, setReviews] = useState([]);
   const [isFavorite, setIsFavorite] = useState(false);
+
+  useEffect(() => {
+    if (isFavorite) {
+      setFavorites(el);
+    }
+  }, [isFavorite]);
 
   const onReadMoreBtnClick = (e) => {
     const card = e.currentTarget;
