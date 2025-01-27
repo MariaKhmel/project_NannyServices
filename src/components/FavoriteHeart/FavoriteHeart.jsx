@@ -1,6 +1,5 @@
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 import css from "./FavoriteHeart.module.css";
-import { useState } from "react";
 
 const FavoriteHeart = ({ isFavorite, setIsFavorite }) => {
   return (
@@ -8,7 +7,7 @@ const FavoriteHeart = ({ isFavorite, setIsFavorite }) => {
       onClick={() => setIsFavorite(true)}
       className={css.favoriteHeartBtn}
     >
-      <FaRegHeart />
+      {isFavorite ? <FaHeart /> : <FaRegHeart />}
     </button>
   );
 };

@@ -25,7 +25,7 @@ const NannyCard = ({ el, nannies }) => {
   const onModalClick = () => {
     showModal(true);
   };
-  console.log(isFavorite);
+
   return (
     <div className={css.nannyCard} onClick={onReadMoreBtnClick}>
       <FavoriteHeart isFavorite={isFavorite} setIsFavorite={setIsFavorite} />
