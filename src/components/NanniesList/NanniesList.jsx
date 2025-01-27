@@ -1,11 +1,15 @@
 import NannyCard from "../NannyCard/NannyCard";
 
-const NanniesList = ({ nannies, setFavorites }) => {
+const NanniesList = ({ nannies, setFavoriteCard }) => {
   return (
     <ul>
       {nannies.map((el) => (
         <li key={el.name}>
-          <NannyCard el={el} nannies={nannies} setFavorites={setFavorites} />
+          <NannyCard
+            el={el}
+            nannies={nannies}
+            setFavoriteCard={setFavoriteCard}
+          />
         </li>
       ))}
     </ul>

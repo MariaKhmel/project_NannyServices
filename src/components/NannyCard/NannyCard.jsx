@@ -9,14 +9,14 @@ import css from "./NannyCard.module.css";
 import MakeAppointmentModal from "../MakeAppointmentModal/MakeAppointmentModal";
 import FavoriteHeart from "../FavoriteHeart/FavoriteHeart";
 
-const NannyCard = ({ el, nannies, setFavorites }) => {
+const NannyCard = ({ el, nannies, setFavoriteCard }) => {
   const [modal, showModal] = useState(false);
   const [reviews, setReviews] = useState([]);
   const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
     if (isFavorite) {
-      setFavorites(el);
+      setFavoriteCard(el.name);
     }
   }, [isFavorite]);
 

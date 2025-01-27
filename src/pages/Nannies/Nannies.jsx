@@ -6,7 +6,7 @@ import babysitters from "../../helpers/babysitters.json";
 import filters from "../../helpers/filters";
 import { filterNannies } from "../../helpers/filterNannies";
 
-const Nannies = ({ setFavorites }) => {
+const Nannies = ({ setFavoriteCard }) => {
   const [totalPages, setTotalPages] = useState(1);
   const [page, setPage] = useState(1);
   const [nannies, setNannies] = useState([]);
@@ -48,7 +48,7 @@ const Nannies = ({ setFavorites }) => {
         filters={filters}
         handleFilterChange={handleFilterChange}
       />
-      <NanniesList nannies={nannies} setFavorites={setFavorites} />
+      <NanniesList nannies={nannies} setFavoriteCard={setFavoriteCard} />
       <button type="button" onClick={onLoadMore} disabled={totalPages === page}>
         Load More
       </button>

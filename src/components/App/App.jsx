@@ -11,6 +11,9 @@ function App() {
   const [isLogInModalShown, setIsLogInModalShown] = useState(false);
   const [favorites, setFavorites] = useState([]);
 
+  const setFavoriteCard = (data) => {
+    console.log(data);
+  };
   const location = useLocation();
   useEffect(() => {
     if (location.pathname === "/register") {
@@ -34,7 +37,10 @@ function App() {
             />
           }
         />
-        <Route path="/nannies" element={<Nannies setFavorites={setFavorites} />} />
+        <Route
+          path="/nannies"
+          element={<Nannies setFavoriteCard={setFavoriteCard} />}
+        />
         <Route
           path="/favorites"
           element={<Favotites favorites={favorites} />}
