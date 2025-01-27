@@ -5,9 +5,8 @@ import NanniesList from "../../components/NanniesList/NanniesList";
 import babysitters from "../../helpers/babysitters.json";
 import filters from "../../helpers/filters";
 import { filterNannies } from "../../helpers/filterNannies";
-import Bugsnag from "@bugsnag/js";
 
-const Nannies = () => {
+const Nannies = ({ setFavorites }) => {
   const [totalPages, setTotalPages] = useState(1);
   const [page, setPage] = useState(1);
   const [nannies, setNannies] = useState([]);

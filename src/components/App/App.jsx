@@ -9,6 +9,7 @@ function App() {
   const [isRegistrationModalShown, setIsRegistrationModalShown] =
     useState(false);
   const [isLogInModalShown, setIsLogInModalShown] = useState(false);
+  const [favorites, setFavorites] = useState([]);
 
   const location = useLocation();
   useEffect(() => {
@@ -33,8 +34,11 @@ function App() {
             />
           }
         />
-        <Route path="/nannies" element={<Nannies />} />
-        <Route path="/favorites" element={<Favotites />} />
+        <Route path="/nannies" element={<Nannies setFavorites={setFavorites} />} />
+        <Route
+          path="/favorites"
+          element={<Favotites favorites={favorites} />}
+        />
         <Route
           path="/login"
           element={
