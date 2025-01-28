@@ -7,17 +7,19 @@ import Favotites from "../../pages/Favotites/Favotites";
 import { identifySelectedCard } from "../../helpers/favorites/identifySelectedCard";
 
 function App() {
+  const location = useLocation();
+
   const [isRegistrationModalShown, setIsRegistrationModalShown] =
     useState(false);
   const [isLogInModalShown, setIsLogInModalShown] = useState(false);
   const [favorites, setFavorites] = useState([]);
+  const [modalType, setModalType] = useState(null);
 
   const setFavoriteCard = (name) => {
     const selectedCard = identifySelectedCard(name);
-
     setFavorites((prevFavorites) => [...prevFavorites, selectedCard]);
   };
-  const location = useLocation();
+
   useEffect(() => {
     if (location.pathname === "/register") {
       setIsRegistrationModalShown(true);
