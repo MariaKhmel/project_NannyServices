@@ -3,8 +3,8 @@ import NannyCard from "../NannyCard/NannyCard";
 const NanniesList = ({ nannies, setFavoriteCard }) => {
   return (
     <ul>
-      {nannies.map((el) => (
-        <li key={el.birthday}>
+      {nannies.map((el, index) => (
+        <li key={index}>
           <NannyCard
             el={el}
             nannies={nannies}

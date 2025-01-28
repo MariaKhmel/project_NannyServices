@@ -14,6 +14,7 @@ function App() {
 
   const setFavoriteCard = (name) => {
     const selectedCard = identifySelectedCard(name);
+
     setFavorites((prevFavorites) => [...prevFavorites, selectedCard]);
   };
   const location = useLocation();
