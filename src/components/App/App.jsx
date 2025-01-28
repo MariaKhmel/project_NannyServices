@@ -45,7 +45,12 @@ function App() {
         />
         <Route
           path="/favorites"
-          element={<Favotites favorites={favorites} />}
+          element={
+            <Favotites
+              favorites={favorites}
+              setFavoriteCard={setFavoriteCard}
+            />
+          }
         />
         <Route
           path="/login"

@@ -1,11 +1,12 @@
 import NanniesList from "../../components/NanniesList/NanniesList";
 
-const Favotites = ({ favorites }) => {
-  console.log(favorites);
+const Favotites = ({ favorites, setFavoriteCard }) => {
   return (
     <>
       <p>Favotites</p>
-      <NanniesList />
+      {favorites.length > 0 && (
+        <NanniesList nannies={favorites} setFavoriteCard={setFavoriteCard} />
+      )}
     </>
   );
 };
