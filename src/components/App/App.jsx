@@ -9,25 +9,35 @@ import { identifySelectedCard } from "../../helpers/favorites/identifySelectedCa
 function App() {
   const location = useLocation();
 
-  const [isRegistrationModalShown, setIsRegistrationModalShown] =
-    useState(false);
-  const [isLogInModalShown, setIsLogInModalShown] = useState(false);
+  // const [isRegistrationModalShown, setIsRegistrationModalShown] =
+  //   useState(false);
+  // const [isLogInModalShown, setIsLogInModalShown] = useState(false);
   const [favorites, setFavorites] = useState([]);
   const [modalType, setModalType] = useState(null);
+
+  useEffect(() => {
+    if (location.pathname === "/register") {
+      setModalType(true);
+    }
+    if (location.pathname === "/login") {
+      setModalType(true);
+    }
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (location.pathname === "/register") {
+      setModalType("register");
+    } else if (location.pathname === "login") {
+      setModalType("login");
+    } else {
+      setModalType(null);
+    }
+  }, location.pathname);
 
   const setFavoriteCard = (name) => {
     const selectedCard = identifySelectedCard(name);
     setFavorites((prevFavorites) => [...prevFavorites, selectedCard]);
   };
-
-  useEffect(() => {
-    if (location.pathname === "/register") {
-      setIsRegistrationModalShown(true);
-    }
-    if (location.pathname === "/login") {
-      setIsLogInModalShown(true);
-    }
-  }, [location.pathname]);
 
   return (
     <>
@@ -36,10 +46,7 @@ function App() {
         <Route
           path="/"
           element={
-            <HomePage
-              setIsRegistrationModalShown={setIsRegistrationModalShown}
-              isRegistrationModalShown={isRegistrationModalShown}
-            />
+            <HomePage modalType={modalType} setModalType={setModalType} />
           }
         />
         <Route
@@ -55,7 +62,7 @@ function App() {
             />
           }
         />
-        <Route
+        {/* <Route
           path="/login"
           element={
             <HomePage
@@ -72,7 +79,7 @@ function App() {
               isRegistrationModalShown={isRegistrationModalShown}
             />
           }
-        />
+        /> */}
       </Routes>
     </>
   );
