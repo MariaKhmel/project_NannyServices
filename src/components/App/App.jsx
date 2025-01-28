@@ -4,6 +4,7 @@ import HomePage from "../../pages/HomePage/HomePage";
 import Nannies from "../../pages/Nannies/Nannies";
 import { useEffect, useState } from "react";
 import Favotites from "../../pages/Favotites/Favotites";
+import { identifySelectedCard } from "../../helpers/favorites/identifySelectedCard";
 
 function App() {
   const [isRegistrationModalShown, setIsRegistrationModalShown] =
@@ -11,8 +12,9 @@ function App() {
   const [isLogInModalShown, setIsLogInModalShown] = useState(false);
   const [favorites, setFavorites] = useState([]);
 
-  const setFavoriteCard = (data) => {
-    console.log(data);
+  const setFavoriteCard = (name) => {
+    const selectedCard = identifySelectedCard(name);
+    setFavorites((prevFavorites) => [...prevFavorites, selectedCard]);
   };
   const location = useLocation();
   useEffect(() => {
