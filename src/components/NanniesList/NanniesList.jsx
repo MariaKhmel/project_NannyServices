@@ -4,7 +4,7 @@ const NanniesList = ({ nannies, setFavoriteCard }) => {
   return (
     <ul>
       {nannies.map((el) => (
-        <li key={el.name}>
+        <li key={el.birthday}>
           <NannyCard
             el={el}
             nannies={nannies}

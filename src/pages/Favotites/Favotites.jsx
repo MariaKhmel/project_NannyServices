@@ -4,8 +4,10 @@ const Favotites = ({ favorites, setFavoriteCard }) => {
   return (
     <>
       <p>Favotites</p>
-      {favorites.length > 0 && (
+      {favorites.length > 0 ? (
         <NanniesList nannies={favorites} setFavoriteCard={setFavoriteCard} />
+      ) : (
+        <p>No favorites added.</p>
       )}
     </>
   );
