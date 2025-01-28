@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import css from "./Nannies.module.css";
 import Filters from "../../components/Filters/Filters";
 import NanniesList from "../../components/NanniesList/NanniesList";
-import babysitters from "../../helpers/babysitters.json";
+import babysitters from "../../data/babysitters.json"
 import filters from "../../helpers/filters";
 import { filterNannies } from "../../helpers/filterNannies";
 
