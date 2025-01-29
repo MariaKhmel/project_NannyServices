@@ -3,7 +3,7 @@ import css from "./FavoriteHeart.module.css";
 
 const FavoriteHeart = ({ isFavorite, setIsFavorite }) => {
   const onSetFavoriteBtnClick = () => {
-    setIsFavorite(true);
+    setIsFavorite((prevValue) => !prevValue);
   };
   return (
     <button onClick={onSetFavoriteBtnClick} className={css.favoriteHeartBtn}>
