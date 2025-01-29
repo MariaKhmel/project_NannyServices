@@ -17,15 +17,6 @@ function App() {
 
   // useEffect(() => {
   //   if (location.pathname === "/register") {
-  //     setModalType(true);
-  //   }
-  //   if (location.pathname === "/login") {
-  //     setModalType(true);
-  //   }
-  // }, [location.pathname]);
-
-  // useEffect(() => {
-  //   if (location.pathname === "/register") {
   //     setModalType("register");
   //   } else if (location.pathname === "login") {
   //     setModalType("login");
