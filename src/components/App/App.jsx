@@ -5,7 +5,7 @@ import Nannies from "../../pages/Nannies/Nannies";
 import { useEffect, useState } from "react";
 import Favotites from "../../pages/Favotites/Favotites";
 import { identifySelectedCard } from "../../helpers/favorites/identifySelectedCard";
-
+import { removeSelectedCard } from "../../helpers/favorites/removeSelectedCard";
 function App() {
   const location = useLocation();
 
@@ -27,6 +27,13 @@ function App() {
 
   const setFavoriteCard = (name) => {
     const selectedCard = identifySelectedCard(name);
+    const nannyName = selectedCard.name;
+    if (favorites.find((el) => el.name === nannyName)) {
+      setFavorites((prevFavorites) =>
+        removeSelectedCard(prevFavorites, nannyName)
+      );
+      return;
+    }
     setFavorites((prevFavorites) => [...prevFavorites, selectedCard]);
   };
 

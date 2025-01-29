@@ -28,7 +28,6 @@ const Nannies = ({ setFavoriteCard }) => {
       const newPage = prevPage + 1;
       const startIndex = prevPage * 3;
       const endIndex = startIndex + 3;
-      console.log(page);
       setNannies((prevNannies) => [
         ...prevNannies,
         ...filteredBabySitters.slice(startIndex, endIndex),

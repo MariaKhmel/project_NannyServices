@@ -10,7 +10,6 @@ import MakeAppointmentModal from "../MakeAppointmentModal/MakeAppointmentModal";
 import FavoriteHeart from "../FavoriteHeart/FavoriteHeart";
 
 const NannyCard = ({ el, nannies, setFavoriteCard }) => {
-  console.log(nannies);
   const [modal, showModal] = useState(false);
   const [reviews, setReviews] = useState([]);
   const [isFavorite, setIsFavorite] = useState(false);
