@@ -9,30 +9,30 @@ import { identifySelectedCard } from "../../helpers/favorites/identifySelectedCa
 function App() {
   const location = useLocation();
 
-  // const [isRegistrationModalShown, setIsRegistrationModalShown] =
-  //   useState(false);
-  // const [isLogInModalShown, setIsLogInModalShown] = useState(false);
+  const [isRegistrationModalShown, setIsRegistrationModalShown] =
+    useState(false);
+  const [isLogInModalShown, setIsLogInModalShown] = useState(false);
   const [favorites, setFavorites] = useState([]);
   const [modalType, setModalType] = useState(null);
 
-  useEffect(() => {
-    if (location.pathname === "/register") {
-      setModalType(true);
-    }
-    if (location.pathname === "/login") {
-      setModalType(true);
-    }
-  }, [location.pathname]);
+  // useEffect(() => {
+  //   if (location.pathname === "/register") {
+  //     setModalType(true);
+  //   }
+  //   if (location.pathname === "/login") {
+  //     setModalType(true);
+  //   }
+  // }, [location.pathname]);
 
-  useEffect(() => {
-    if (location.pathname === "/register") {
-      setModalType("register");
-    } else if (location.pathname === "login") {
-      setModalType("login");
-    } else {
-      setModalType(null);
-    }
-  }, location.pathname);
+  // useEffect(() => {
+  //   if (location.pathname === "/register") {
+  //     setModalType("register");
+  //   } else if (location.pathname === "login") {
+  //     setModalType("login");
+  //   } else {
+  //     setModalType(null);
+  //   }
+  // }, location.pathname);
 
   const setFavoriteCard = (name) => {
     const selectedCard = identifySelectedCard(name);
@@ -62,7 +62,7 @@ function App() {
             />
           }
         />
-        {/* <Route
+        <Route
           path="/login"
           element={
             <HomePage
@@ -79,7 +79,7 @@ function App() {
               isRegistrationModalShown={isRegistrationModalShown}
             />
           }
-        /> */}
+        />
       </Routes>
     </>
   );
