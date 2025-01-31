@@ -8,17 +8,12 @@ import Characteristic from "../Characteristic/Characteristic";
 import css from "./NannyCard.module.css";
 import MakeAppointmentModal from "../MakeAppointmentModal/MakeAppointmentModal";
 import FavoriteHeart from "../FavoriteHeart/FavoriteHeart";
+import { FaRegHeart, FaHeart } from "react-icons/fa";
 
 const NannyCard = ({ el, nannies, setFavoriteCard }) => {
   const [modal, showModal] = useState(false);
   const [reviews, setReviews] = useState([]);
   const [isFavorite, setIsFavorite] = useState(false);
-
-  useEffect(() => {
-    if (isFavorite) {
-      setFavoriteCard(el.name);
-    }
-  }, [isFavorite]);
 
   const onReadMoreBtnClick = (e) => {
     const card = e.currentTarget;
@@ -32,9 +27,27 @@ const NannyCard = ({ el, nannies, setFavoriteCard }) => {
     showModal(true);
   };
 
+  const onSetFavoriteBtnClick = () => {
+    setIsFavorite((prevValue) => {
+      if (prevValue) {
+        setFavoriteCard(el.name);
+      }
+      return !prevValue;
+    });
+  };
+
   return (
     <div className={css.nannyCard} onClick={onReadMoreBtnClick}>
-      <FavoriteHeart isFavorite={isFavorite} setIsFavorite={setIsFavorite} />
+      {/* <FavoriteHeart
+        isFavorite={isFavorite}
+        setIsFavorite={setIsFavorite}
+        setFavoriteCard={setFavoriteCard}
+      /> */}
+
+      <button onClick={onSetFavoriteBtnClick} className={css.favoriteHeartBtn}>
+        {isFavorite ? <FaHeart /> : <FaRegHeart />}
+      </button>
+
       <img src={el.avatar_url} className={css.nannyImg} />
       <div className={css.nannyInfo}>
         <p>Nanny</p>

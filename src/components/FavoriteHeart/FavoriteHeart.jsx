@@ -1,17 +1,12 @@
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 import css from "./FavoriteHeart.module.css";
 
-const FavoriteHeart = ({ isFavorite, setIsFavorite }) => {
-  // const onSetFavoriteBtnClick = () => {
-  //   setIsFavorite((prevValue) => !prevValue);
-  // };
+const FavoriteHeart = ({ isFavorite, setIsFavorite, setFavoriteCard }) => {
+  const onSetFavoriteBtnClick = () => {
+    setIsFavorite((prevValue) => !prevValue);
+  };
   return (
-    <button
-      onClick={() => {
-        setIsFavorite((prevValue) => !prevValue);
-      }}
-      className={css.favoriteHeartBtn}
-    >
+    <button onClick={onSetFavoriteBtnClick} className={css.favoriteHeartBtn}>
       {isFavorite ? <FaHeart /> : <FaRegHeart />}
     </button>
   );
